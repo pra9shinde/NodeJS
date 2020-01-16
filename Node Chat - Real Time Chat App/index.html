@@ -1,0 +1,128 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Node Chat - Chat Realtime</title>
+  <style>
+    .chat-window{
+      margin: 10px;
+      border: 5px solid#563d7c;
+    }
+    #message-container {
+      width: 100%;
+      min-height: 650px;
+      float: left;
+      position: relative;
+      padding: 30px;
+    }
+    #message-container div {
+      background-color: #E8DFF7;
+      padding: 10px;
+    }
+    #message-container div:nth-child(2n) {
+      background-color: #FFF;/* B5B5B5 */
+    }
+    #send-container {
+      position: relative;
+      padding-left:30px;
+      padding-right: 10px;
+      bottom: 0;
+      width: 100%;
+    }
+    .navbar,
+    .navbar a {
+      color: white;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg" style="background-color: #563d7c;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" class="d-block" viewBox="0 0 612 612" role="img"
+      focusable="false">
+      <title>Bootstrap</title>
+      <path fill="currentColor"
+        d="M510 8a94.3 94.3 0 0 1 94 94v408a94.3 94.3 0 0 1-94 94H102a94.3 94.3 0 0 1-94-94V102a94.3 94.3 0 0 1 94-94h408m0-8H102C45.9 0 0 45.9 0 102v408c0 56.1 45.9 102 102 102h408c56.1 0 102-45.9 102-102V102C612 45.9 566.1 0 510 0z">
+      </path>
+      <path fill="currentColor"
+        d="M196.77 471.5V154.43h124.15c54.27 0 91 31.64 91 79.1 0 33-24.17 63.72-54.71 69.21v1.76c43.07 5.49 70.75 35.82 70.75 78 0 55.81-40 89-107.45 89zm39.55-180.4h63.28c46.8 0 72.29-18.68 72.29-53 0-31.42-21.53-48.78-60-48.78h-75.57zm78.22 145.46c47.68 0 72.73-19.34 72.73-56s-25.93-55.37-76.46-55.37h-74.49v111.4z">
+      </path>
+    </svg>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">NodeChat <span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <style>
+          .btn-outline-warning {
+            color: #ffe484;
+            border-color: #ffe484;
+          }
+          .btn-outline-primary {
+            background-color: #563d7c;
+            color: #fff;
+            border-color: #563d7c;
+          }
+          .btn-outline-primary:hover {
+            color: #fff;
+            background-color: #563d7c;
+            border-color: #563d7c;
+          }
+        </style>
+        <button class="btn btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="chat-window">
+      <div class="row">
+          <div id="message-container"></div>
+          <form id="send-container">
+            <div class="form-group" style="width: 100%;">
+              <div class="row">
+                <div class="col-lg-10">
+                  <input type="text" class="form-control" id="message-input" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">Start Chatting with your friends Now!!!.</small>
+                </div>
+                <div class="col-lg-2">
+                  <button type="submit" id="send-button" class="btn btn-outline-primary">Send Message</button>
+                </div>
+              </div>
+            </div>
+          </form>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
