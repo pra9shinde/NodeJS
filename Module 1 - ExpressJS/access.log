@@ -1,0 +1,5 @@
+::1 - - [03/Feb/2020:19:05:03 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15"
+::1 - - [03/Feb/2020:19:05:04 +0000] "GET /css/product.css HTTP/1.1" 200 379 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15"
+::1 - - [03/Feb/2020:19:05:04 +0000] "GET /js/main.js HTTP/1.1" 200 519 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15"
+::1 - - [03/Feb/2020:19:05:04 +0000] "GET /images/2020-01-11T02:34:15.317Z-product-15.jpg HTTP/1.1" 404 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15"
+::1 - - [03/Feb/2020:19:05:04 +0000] "GET /css/main.css HTTP/1.1" 200 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15"
