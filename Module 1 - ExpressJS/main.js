@@ -107,7 +107,7 @@ mongoose.connect(MONGODB_URI)
     app.listen(process.env.PORT || 3000);
 })
 .catch(err => console.log(err));
-
+ 
 /*
      MYSQL Sequelize
      const sequelize = require('./util/database');
